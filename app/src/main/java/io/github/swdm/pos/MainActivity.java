@@ -16,6 +16,11 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private ApiService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new MyAdapter();
         recyclerView.setAdapter(mAdapter);
+
+        apiService = ((ApiReposApplication) getApplication()).getApiService();
     }
 
     public void codeBtnClick(){
@@ -68,7 +77,19 @@ public class MainActivity extends AppCompatActivity {
             String message = re;
             Log.d("onActivityResult", "onActivityResult: ." + re);
             Toast.makeText(this, re, Toast.LENGTH_LONG).show();
-            ((MyAdapter) mAdapter).addData(re);
+//            ((MyAdapter) mAdapter).addData(re);
+            apiService.getItem(re).enqueue(new Callback<Product>() {
+                @Override
+                public void onResponse(Call<Product> call, Response<Product> response) {
+                    Product product = response.body();
+                    Log.d("TLATPDYD","성공 : " + product.getName());
+                }
+
+                @Override
+                public void onFailure(Call<Product> call, Throwable t) {
+
+                }
+            }
         }
     }
 }

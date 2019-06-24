@@ -7,6 +7,50 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:text="상품명"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            />
+
+        <TextView
+            android:text="친환경 유/무"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            />
+        <TextView
+            android:text="가격"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            />
+        <TextView
+            android:text="적립률"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,12 +61,5 @@
             android:layout_height="wrap_content"
             android:text="바코드" />
     </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        ></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

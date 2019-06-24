@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(mDataset.get(position));
+        holder.name.setText(mDataset.get(position));
     }
 
     @Override
@@ -42,12 +42,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private ViewGroup root;
-        private TextView textView;
+        private TextView name;
+        private TextView category;
+        private TextView price;
+        private TextView percent;
 
         public MyViewHolder(View v) {
             super(v);
             root = (ViewGroup) v;
-            textView = v.findViewById(R.id.textView);
+            name = v.findViewById(R.id.name);
+            category = v.findViewById(R.id.category);
+            price = v.findViewById(R.id.price);
+            percent = v.findViewById(R.id.percent);
+
         }
     }
 
