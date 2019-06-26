@@ -11,7 +11,7 @@
         android:title="클리어"/>
     <item
         android:id="@+id/charge_menu"
-        android:title="만원충전"/>
+        android:title="충전"/>
     <item
         android:id="@+id/buy_menu"
         android:title="구매"/>

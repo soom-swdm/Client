@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="10dp"
     tools:context=".MainActivity">
 
 
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textSize="15dp"
             />
 
         <TextView
@@ -27,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textSize="15dp"
             />
         <TextView
             android:text="가격"
@@ -34,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textSize="15dp"
             />
         <TextView
             android:text="적립률"
@@ -41,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textSize="15dp"
             />
     </LinearLayout>
 
