@@ -8,17 +8,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private ArrayList<String> mDataset;
+    private ArrayList<Product> mDataset;
 
     public MyAdapter() {
         this.mDataset = new ArrayList<>();
     }
 
-    public void addData(String str) {
-        mDataset.add(str);
+    public void addData(Product product) {
+        mDataset.add(product);
         notifyDataSetChanged();
+    }
+
+    public void clearData(){
+        mDataset.clear();
+        notifyDataSetChanged();
+    }
+
+    public List<Product> getItems(){
+        return mDataset;
     }
 
     @NonNull
@@ -32,7 +42,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.name.setText(mDataset.get(position));
+        holder.name.setText(mDataset.get(position).name);
+        holder.category.setText(mDataset.get(position).category);
+        holder.price.setText(mDataset.get(position).price+"");
+        holder.percent.setText(mDataset.get(position).persent+"");
     }
 
     @Override
@@ -54,7 +67,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             category = v.findViewById(R.id.category);
             price = v.findViewById(R.id.price);
             percent = v.findViewById(R.id.percent);
-
         }
     }
 

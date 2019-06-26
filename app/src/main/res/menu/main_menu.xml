@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/user_menu"
+        android:title="유저확인"/>
+    <item
+        android:id="@+id/code_menu"
+        android:title="바코드"/>
+    <item
+        android:id="@+id/clear_menu"
+        android:title="클리어"/>
+    <item
+        android:id="@+id/charge_menu"
+        android:title="만원충전"/>
+    <item
+        android:id="@+id/buy_menu"
+        android:title="구매"/>
+</menu>
